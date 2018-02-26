@@ -1,0 +1,50 @@
+.poi_tip {
+    position: relative;
+    min-width: 50px;
+    padding-right: 40px;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,.5);
+    padding-left: 5px;
+}
+
+.poi_tip .poi_name {
+    line-height: 38px;
+    padding: 0 10px 0 5px;
+}
+
+.poi_name {
+    display: inline-block;
+    padding: 10px 10px 10px 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    color: #3c3d3f;
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+.poi_dir, .poibtn-planadd {
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.poi_dir {
+    background: #3D93FD url(../images/icon_walk.png) center no-repeat;
+    background-size: 16px ;
+}
+
+.poi_tip .poi_tip_foot {
+    position: absolute;
+    bottom: -14px;
+    left: calc(50% - 6.5px);
+    border: 7px solid transparent;
+    border-top: 8px solid #fff;
+}

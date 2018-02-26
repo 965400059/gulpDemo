@@ -20,9 +20,14 @@ var rename		= require('gulp-rename');//重命名
 
 //js编码转换，合并，改名，压缩
 gulp.task('js',function () {
-	return	gulp.src(['./src/js/WdatePicker.js'])
-				.pipe(concat('WdatePicker.min.js'))
+	return	gulp.src(['./src/js/jquery.js','./src/js/packageMethod.js','./src/js/myLinkage.js','./src/js/jquery.tmpl.min.js',
+					'./src/js/jquery.jqGrid.src.js','./src/js/grid.locale-cn.js',
+					'./src/js/bootstrap.min.js','./src/js/bootstrapValidator.js',
+					'./src/js/echarts.min.js','./src/js/china.js',
+					'./src/js/layer.js','./src/js/WdatePicker.js'])
+				.pipe(concat('libs.js'))
 				.pipe(uglify())
+				.pipe(rename({suffix:'.min'}))
 				.pipe(gulp.dest('./dist/js'))
 })
 
@@ -49,9 +54,12 @@ gulp.task('sass',function(){
 })
 
 gulp.task('css',function () {
-	gulp.src('./src/css/datepicker.css')
-		.pipe(concat('datepicker.css'))
+	gulp.src(['./src/css/bootstrap.min.css','./src/css/sb-admin.css','./src/css/bootstrapValidator.css',
+			'./src/css/font-awesome.min.css','./src/css/morris.css','./src/css/mapPoi.css','./src/css/layer.css',
+			'./src/css/ui.jqgrid.css','./src/css/jquery-ui-1.8.16.custom.css','./src/css/master.css','./src/css/WdatePicker.css'])
+		.pipe(concat('style.css'))
 		.pipe(cleanCss())
+		.pipe(rename({suffix:'.min'}))
 		.pipe(gulp.dest('./dist/css'))
 })
 
